@@ -1,0 +1,17 @@
+<!-- we can use ngSubmit and don't have to use a event.preventDefault to prevent the form from submitting -->
+<!-- [(ngModel)] is a two way data binding that binds to the variables defined in the add task component typescript file. Note that the 'name' attribute of the input tag must be the same as the variable you set it equal to-->
+<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+	<div class="form-control">
+		<label for="text">Task</label>
+		<input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task" />
+	</div>
+	<div class="form-control">
+		<label for="day">Day & Time</label>
+		<input type="text" name="day" [(ngModel)]="day" id="day" placeholder="Add Day & Time" />
+	</div>
+	<div class="form-control form-control-check">
+		<label for="reminder">Set Reminder</label>
+		<input type="checkbox" name="reminder" [(ngModel)]="reminder"  id="reminder" />
+	</div>
+	<input type="submit" value="Save Task" class="btn btn-block" />
+</form>	
